@@ -24,6 +24,10 @@ public class MainFrameListener implements ActionListener{
 		mainFrame.getHerbivoreInfoButton().addActionListener(this);
 		mainFrame.getGrassInfoButton().addActionListener(this);
 		mainFrame.getHuntButton().addActionListener(this);
+		mainFrame.getPredatorRemoveButton().addActionListener(this);
+		mainFrame.getHerbivoreRemoveButton().addActionListener(this);
+		mainFrame.getGrassRemoveButton().addActionListener(this);
+		mainFrame.getEatWeedButton().addActionListener(this);
 	}
 	@Override
 	public void actionPerformed(ActionEvent event) {
@@ -82,7 +86,19 @@ public class MainFrameListener implements ActionListener{
 			mainFrame.udpateInfoPlant();
 		}
 		if(event.getSource()==mainFrame.getHuntButton()) {
-			System.out.println("HUNT");
+			mainFrame.hunt();
+		}
+		if(event.getSource()==mainFrame.getEatWeedButton()) {
+			mainFrame.eatWeed();
+		}
+		if(event.getSource()==mainFrame.getPredatorRemoveButton()) {
+			mainFrame.removePredator();
+		}
+		if(event.getSource()==mainFrame.getHerbivoreRemoveButton()) {
+			mainFrame.removeHerbivore();
+		}
+		if(event.getSource()==mainFrame.getGrassRemoveButton()) {
+			mainFrame.removeGrass();
 		}
 	}
 }

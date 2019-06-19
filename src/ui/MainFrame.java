@@ -65,6 +65,7 @@ public class MainFrame extends Frame{
 		ipLabel.setBounds(1200, 170, 100, 30);
 		add(ipLabel);
 		ipTextField = new TextField();
+		ipTextField.setText("localhost");
 		ipTextField.setBounds(1200, 210, 100, 30);
 		add(ipTextField);
 		portLabel = new Label("Port");
@@ -72,6 +73,7 @@ public class MainFrame extends Frame{
 		portLabel.setBounds(1320, 170, 100, 30);
 		add(portLabel);
 		portTextField = new TextField();
+		portTextField.setText("1500");
 		portTextField.setBounds(1320, 210, 100, 30);
 		add(portTextField);
 		connectButton.setFont(mainFont);
@@ -288,6 +290,38 @@ public class MainFrame extends Frame{
 		int ind = grassList.getSelectedIndex();
 		Life observable = MainControl.getPlantsInfo()[ind];
 		infoArea.setText(observable.getInfo());
+	}
+	
+	public void removePredator() {
+		//getting the proper unit
+		int ind = predatorList.getSelectedIndex();
+		Life observable = MainControl.getPredatorsInfo()[ind];
+		MainControl.remove(observable);
+	}
+	
+	public void removeHerbivore() {
+		//getting the proper unit
+		int ind = herbivoresList.getSelectedIndex();
+		Life observable = MainControl.getHerbivoresInfo()[ind];
+		MainControl.remove(observable);
+	}
+
+	public void removeGrass() {
+		//getting the proper unit
+		int ind = grassList.getSelectedIndex();
+		Life observable = MainControl.getPlantsInfo()[ind];
+		MainControl.remove(observable);
+	}
+	
+	public void hunt() {
+		//getting the proper unit
+		int ind = predatorList.getSelectedIndex();
+		Life observable = MainControl.getPredatorsInfo()[ind];
+		
+	}
+	
+	public void eatWeed() {
+		
 	}
 	
 	public Button getConnectButton() {

@@ -63,6 +63,30 @@ public class MainControl {
 		}
 	}
 	
+	public static void remove(Life l) {
+		try {
+			cnc.sendObject(new Protocol(Protocol.DELETE_LIFE,"delet",l));
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void hunt(Life l) {
+		try {
+			cnc.sendObject(new Protocol(Protocol.HUNT,"hunt",l));
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void eat(Life l) {
+		try {
+			cnc.sendObject(new Protocol(Protocol.EAT,"eat",l));
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static Predator[] getPredatorsInfo() {
 		return lastUpdate.getPredatorsInfo();
 	}
