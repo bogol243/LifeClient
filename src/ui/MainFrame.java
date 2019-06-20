@@ -42,7 +42,7 @@ public class MainFrame extends Frame{
 	private Button grassInfoButton;
 	private Button grassRemoveButton;
 	private TextArea infoArea;
-	private Button clearButton;
+	//private Button clearButton;
 	private Button saveButton;
 	private Button loadButton;
 	private Button updateButton;
@@ -55,59 +55,60 @@ public class MainFrame extends Frame{
 			dispose(); 
 			}
 		});
+		/*
 		clearButton = new Button("Clear");
 		clearButton.setFont(mainFont);
 		clearButton.setBounds(50, 660, 300, 50);
-		add(clearButton);
+		add(clearButton);*/
 		connectButton = new Button("Connect");
 		ipLabel = new Label("Ip");
 		ipLabel.setFont(mainFont);
-		ipLabel.setBounds(1200, 170, 100, 30);
+		ipLabel.setBounds(30, 70, 100, 30);
 		add(ipLabel);
 		ipTextField = new TextField();
 		ipTextField.setText("localhost");
-		ipTextField.setBounds(1200, 210, 100, 30);
+		ipTextField.setBounds(30, 110, 100, 30);
 		add(ipTextField);
 		portLabel = new Label("Port");
 		portLabel.setFont(mainFont);
-		portLabel.setBounds(1320, 170, 100, 30);
+		portLabel.setBounds(150, 70, 100, 30);
 		add(portLabel);
 		portTextField = new TextField();
 		portTextField.setText("1500");
-		portTextField.setBounds(1320, 210, 100, 30);
+		portTextField.setBounds(150, 110, 100, 30);
 		add(portTextField);
 		connectButton.setFont(mainFont);
-		connectButton.setBounds(1200, 250, 220, 30);
+		connectButton.setBounds(30, 140, 220, 30);
 		disconnectButton = new Button("Disconnect");
-		disconnectButton.setBounds(1200, 290, 220, 30);
+		disconnectButton.setBounds(30, 180, 220, 30);
 		disconnectButton.setFont(mainFont);
 		add(disconnectButton);
 		add(connectButton);
 		updateButton = new Button("Update");
-		updateButton.setBounds(1200,500, 200, 30);
+		updateButton.setBounds(30,220, 220, 30);
 		updateButton.setFont(mainFont);
 		add(updateButton);
 		selectThing = new CheckboxGroup();
 		nameTextField = new TextField();
 		nameLabel = new Label("Name");
-		nameLabel.setBounds(50, 170, 100, 30);
+		nameLabel.setBounds(30, 360, 100, 30);
 		nameLabel.setFont(mainFont);
 		add(nameLabel);
-		nameTextField.setBounds(50,200,150,30);
+		nameTextField.setBounds(30,390,150,30);
 		weightLabel = new Label("Weight");
-		weightLabel.setBounds(205, 170, 100, 30);
+		weightLabel.setBounds(180, 360, 100, 30);
 		weightLabel.setFont(mainFont);
 		add(weightLabel);
 		weightTextField = new TextField();
-		weightTextField.setBounds(205, 200, 150, 30);
+		weightTextField.setBounds(180, 390, 150, 30);
 		add(nameTextField);
 		add(weightTextField);
 		predatorCheckbox = new Checkbox("Predator");
-		predatorCheckbox.setBounds(50,100,100, 30);
+		predatorCheckbox.setBounds(30,440,100, 30);
 		herbivoreCheckbox = new Checkbox("Herbivore");
-		herbivoreCheckbox.setBounds(160,100,100,30);
+		herbivoreCheckbox.setBounds(130,440,100,30);
 		grassCheckbox = new Checkbox("Grass");
-		grassCheckbox.setBounds(270,100,100,30);
+		grassCheckbox.setBounds(240,440,100,30);
 		predatorCheckbox.setFont(mainFont);
 		herbivoreCheckbox.setFont(mainFont);
 		grassCheckbox.setFont(mainFont);
@@ -115,68 +116,68 @@ public class MainFrame extends Frame{
 		herbivoreCheckbox.setCheckboxGroup(selectThing);
 		grassCheckbox.setCheckboxGroup(selectThing);
 		createButton = new Button("Create");
-		createButton.setBounds(50, 250, 300, 50);
+		createButton.setBounds(30, 470, 300, 50);
 		createButton.setFont(mainFont);
 		predatorList = new List(5);
-		predatorList.setBounds(400, 200, 200, 100);
+		predatorList.setBounds(280, 90, 200, 100);
 		predatorsLabel = new Label("Predators");
-		predatorsLabel.setBounds(400,170, 100, 30);
+		predatorsLabel.setBounds(280,60, 100, 30);
 		predatorsLabel.setFont(mainFont);
 		saveButton = new Button("Save");
 		saveButton.setFont(mainFont);
-		saveButton.setBounds(390, 100, 100, 30);
+		saveButton.setBounds(30, 260, 100, 30);
 		add(saveButton);
 		loadButton = new Button("Load");
 		loadButton.setFont(mainFont);
-		loadButton.setBounds(510, 100, 100, 30);
+		loadButton.setBounds(150, 260, 100, 30);
 		add(loadButton);
 		add(predatorsLabel);
 		herbivoresList = new List(5);
-		herbivoresList.setBounds(650, 200, 200, 100);
+		herbivoresList.setBounds(490, 90, 200, 100);
 		herbivoresLabel = new Label("Herbivores");
-		herbivoresLabel.setBounds(650,170, 100, 30);
+		herbivoresLabel.setBounds(490,60, 100, 30);
 		herbivoresLabel.setFont(mainFont);
 		add(herbivoresList);
 		add(herbivoresLabel);
 		grassList = new List(5);
-		grassList.setBounds(900, 200, 200, 100);
+		grassList.setBounds(700, 90, 200, 100);
 		grassLabel = new Label("Grass");
-		grassLabel.setBounds(900,170, 100, 30);
+		grassLabel.setBounds(700,60, 100, 30);
 		grassLabel.setFont(mainFont);
 		predatorInfoButton = new Button("Get info");
-		predatorInfoButton.setBounds(400, 310, 200, 30);
+		predatorInfoButton.setBounds(280, 200, 200, 30);
 		predatorInfoButton.setFont(mainFont);
 		add(predatorInfoButton);
 		huntButton = new Button("Hunt!");
-		huntButton.setBounds(400, 350, 200, 30);
+		huntButton.setBounds(280, 240, 200, 30);
 		huntButton.setFont(mainFont);
 		add(huntButton);
 		predatorRemoveButton = new Button("Remove");
-		predatorRemoveButton.setBounds(400, 390, 200, 30);
+		predatorRemoveButton.setBounds(280, 280, 200, 30);
 		predatorRemoveButton.setFont(mainFont);
 		add(predatorRemoveButton);
 		herbivoreInfoButton = new Button("Get info");
-		herbivoreInfoButton.setBounds(650, 310, 200, 30);
+		herbivoreInfoButton.setBounds(490, 200, 200, 30);
 		herbivoreInfoButton.setFont(mainFont);
 		eatWeedButton = new Button("Eat grass");
-		eatWeedButton.setBounds(650, 350, 200, 30);
+		eatWeedButton.setBounds(490, 240, 200, 30);
 		eatWeedButton.setFont(mainFont);
 		herbivoreRemoveButton = new Button("Remove");
-		herbivoreRemoveButton.setBounds(650, 390, 200, 30);
+		herbivoreRemoveButton.setBounds(490, 280, 200, 30);
 		herbivoreRemoveButton.setFont(mainFont);
 		grassRemoveButton = new Button("Remove");
-		grassRemoveButton.setBounds(900, 350, 200, 30);
+		grassRemoveButton.setBounds(700, 240, 200, 30);
 		grassRemoveButton.setFont(mainFont);
 		grassInfoButton = new Button("Get info");
-		grassInfoButton.setBounds(900, 310, 200, 30);
+		grassInfoButton.setBounds(700, 200, 200, 30);
 		grassInfoButton.setFont(mainFont);
 		add(grassInfoButton);
 		add(grassRemoveButton);
 		infoArea = new TextArea();
-		infoArea.setBounds(50,350, 300, 300);
+		infoArea.setBounds(390,380, 450, 110);
 		infoArea.setEditable(false);
 		informationLabel = new Label("Information");
-		informationLabel.setBounds(150, 310, 150, 30);
+		informationLabel.setBounds(550, 350, 150, 30);
 		informationLabel.setFont(mainFont);
 		add(informationLabel);
 		add(infoArea);
@@ -190,7 +191,7 @@ public class MainFrame extends Frame{
 		add(herbivoreCheckbox);
 		add(grassCheckbox);
 		add(predatorCheckbox);
-		setSize(1920, 1080);
+		setSize(940, 560);
 		setVisible(true);
 		disconnectFromServer();
 	}
@@ -203,7 +204,7 @@ public class MainFrame extends Frame{
 		predatorCheckbox.setEnabled(false);
 		herbivoreCheckbox.setEnabled(false);
 		grassCheckbox.setEnabled(false);
-		clearButton.setEnabled(false);
+		//clearButton.setEnabled(false);
 		huntButton.setEnabled(false);
 		predatorInfoButton.setEnabled(false);
 		predatorRemoveButton.setEnabled(false);
@@ -229,7 +230,7 @@ public class MainFrame extends Frame{
 		predatorCheckbox.setEnabled(true);
 		herbivoreCheckbox.setEnabled(true);
 		grassCheckbox.setEnabled(true);
-		clearButton.setEnabled(true);
+		//clearButton.setEnabled(true);
 		huntButton.setEnabled(true);
 		predatorInfoButton.setEnabled(true);
 		predatorRemoveButton.setEnabled(true);
@@ -510,12 +511,13 @@ public class MainFrame extends Frame{
 	public void setInfoArea(TextArea infoArea) {
 		this.infoArea = infoArea;
 	}
+	/*
 	public Button getClearButton() {
 		return clearButton;
 	}
 	public void setClearButton(Button clearButton) {
 		this.clearButton = clearButton;
-	}
+	}*/
 	public Button getSaveButton() {
 		return saveButton;
 	}
